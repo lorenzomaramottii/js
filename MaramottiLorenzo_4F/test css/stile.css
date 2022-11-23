@@ -1,0 +1,8 @@
+table, td, th {border: 1px  #f900b7 solid ;border-collapse:collapse}
+
+td,th {padding: 3px 5px;}
+
+tr.even {background: #00ffc3;}
+tr.odd {background:#1d00f9;}
+tr.title{background: linear-gradient(360deg, #00ffc3 0%, #00ffc3 40%, #1d00f9 90%);}
+tr.final{background: linear-gradient(180deg, #00ffc3 0%, #00ffc3 40%, #1d00f9 90%);}

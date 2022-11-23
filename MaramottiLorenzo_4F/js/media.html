@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            var g=0;
+            var somma=0;
+            function aggiungi(){
+                var num;
+                num = Number(document.getElementById("numero").value);
+                
+                somma = somma + num; 
+                g = g + 1;
+
+                document.getElementById("valore").value = g;
+                document.getElementById("numero").value = "";
+
+            }
+            function media(){
+                var media;
+                media = somma/g;
+                media = Math.round(media);
+                alert("la media dei valori inseriti é " + media)
+                g=0;
+                document.getElementById("valore").value = g;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>CALCOLA MEDIA NUMERI</h1>
+        inserisci numero:
+        <input type="number" id="numero"
+        placeholder="Inserisci valore..."/> <br><br>
+        <input type="button" value="Aggiungi valore" onclick="aggiungi();"/>
+        <input type="button" value="calcola media" onclick="media();"/><br><br>
+        Numero valori inseriti:<input type="number" id="valore" disabled="True"/>
+    </body>
+</html>

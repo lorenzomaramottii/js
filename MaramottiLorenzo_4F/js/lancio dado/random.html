@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <style>
+            img{height: 30%; width: 15%;}
+            body{text-align: center;}
+        </style>
+        <script>
+            function lancio(){
+                const numMax = 6
+                var estrazione
+                estrazione = Math.trunc(numMax*Math.random()) + 1   
+                document.getElementById("img").src = (estrazione + ".png")
+            }
+        </script>
+    </head>
+    <body>
+        <img src="dado.gif.crdownload" onclick="lancio();"/>
+        <img id="img" src="0.png"/><br>
+    </body>
+</html>

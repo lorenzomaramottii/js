@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <style>
+            img{height: 60%; width: 50%;}
+            body{
+                text-align: center;
+            }
+        </style>
+        <script>
+            function cambioimg1(){
+                document.getElementById("titolo").innerHTML = "1-2-3 TUTTI A CASA ALEEEE"
+                var nuovaimg="img/ciccio1.img"
+                document.getElementById("img").src = "koop.jpg"
+            }
+            function cambioimg2(){
+                document.getElementById("titolo").innerHTML ="ER MIJORE YOUTUBER DE TUTTI I TEMPI"
+                var nuovaimg="img/ciccio1.img"
+                document.getElementById("img").src = "ciccio.jpg"
+            }
+        </script>
+    </head>
+    <body>
+        <H1 id = "titolo">ER MIJORE YOUTUBER DE TUTTI I TEMPI</H1>
+        <img id = "img" src="ciccio.jpg"
+        onmouseover="cambioimg1();"
+        onmouseout="cambioimg2();"/>
+    </body>
+</html>

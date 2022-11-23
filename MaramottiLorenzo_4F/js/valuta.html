@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script>
+            function dollaroeuro(){
+                const valore_conversione = 1.03;
+                var valoreDollaro;
+                var valoreEuro;
+                valoreDollaro=Number(document.getElementById("txtDollaro").value);
+                valoreEuro=valoreDollaro*valore_conversione;
+                document.getElementById("txtEuro").value = valoreEuro;
+
+            }
+            function eurodollaro(){
+                const valore_conversione = 1.03;
+                var valoreDollaro;
+                var valoreEuro;
+                valoreEuro=Number(document.getElementById("txtEuro").value);
+                valoreDollaro=valoreEuro/valore_conversione;
+                document.getElementById("txtDollaro").value = valoreDollaro;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>CONVERTITORE DI VALUTA</legend>
+                Dollari:
+                <input type="number" id="txtDollaro"
+                placeholder="inserisci valore in dollari..."/>
+                Euro:
+                <input type="number" id="txtEuro"
+                placeholder="inserisci valore in euro..."/><br><br>
+                <input type="button" value="da $ a €"
+                onclick="dollaroeuro();"/>
+                <input type="button" value="da € a $"
+                onclick="eurodollaro();"/>
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            let contatore = 0;
+            let record = 0;
+
+            setInterval(click() => { 
+                contatore += 1;
+                if (contatore > record){
+                    record = contatore;
+                    alert("NUOVO RECORD!!!! \n IL TUO NUOVO RECORD: " record);
+                    document.getElementById("textarea").value = "il tuo record"  + record;
+                    
+                }
+            },5000)
+        </script>
+    </head>
+
+    <body>
+        <h1>EL JUEGO DEL CLICK</h1>
+        <button 
+            onclick="click();">
+            CLICK
+        </button><br><br>
+        <textarea readonly>
+        </textarea>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+            "use strict"
+            function secondi(){
+                // let n = 9 +"1"
+                // alert(typeof(n))
+                // n = 9 -"1"
+                // alert(typeof(n))
+
+                let ore = Number(prompt("inserire ore: ", 0))
+                let minuti = Number(prompt("inserire minuti: ", 0))
+                let secondi = Number(prompt("inserire secondi: ", 0))
+
+                const cambio = 60
+                let tot = ore*cambio*cambio + minuti*cambio + secondi
+                alert("secondi: " + tot)
+            }
+
+            function orario(){
+                let tot = Number(prompt("inserisci secondi: "))
+                let ore = Number(tot/3600)
+                let minuti = Number((tot%3600)/60)
+                let secondi = Number(tot - minuti*60 - ore*3600)
+
+                alert("orario: " + ore + " " + minuti + " " +  secondi)
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="secondi();">
+            SECONDI
+        </button>
+
+        <button onclick="orario();">
+            ORARIO
+        </button>
+
+    </body>
+</html>

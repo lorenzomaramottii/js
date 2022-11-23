@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script>
+            function benvenuto(){
+                alert("Benvenuto nella pagina di ancio dei dadi");
+            }
+            function lanciodado(){
+                const max = 6;
+                var uscite = new Array();
+                var lanci = prompt("Quanti lanci vuoi fare?");
+                for (var i=0; i<max; i++){
+                    uscite[i] = 0;
+                }
+                for(var i=0; i<lanci;i++){
+                        var num = Math.trunc(max*Math.random()) +1;
+                        if(num==1){
+                            uscite[0]=uscite[0] +1;
+                        }
+                        if(num==2){
+                            uscite[1]=uscite[1] +1;
+                        }
+                        if(num==3){
+                            uscite[2]=uscite[2] +1;
+                        }
+                        if(num==4){
+                            uscite[3]=uscite[3] +1;
+                        }
+                        if(num==5){
+                            uscite[4]=uscite[4] +1;
+                        }
+                        if(num==6){
+                            uscite[5]=uscite[5] +1;
+                        }
+                    }
+                
+
+                document.getElementById("uscita1").value=uscite[0];
+                document.getElementById("uscita2").value=uscite[1];
+                document.getElementById("uscita3").value=uscite[2];
+                document.getElementById("uscita4").value=uscite[3];
+                document.getElementById("uscita5").value=uscite[4];
+                document.getElementById("uscita6").value=uscite[5];
+
+                document.getElementById("percentuale1").value= Math.round(uscite[0]/lanci*100);
+                document.getElementById("percentuale2").value= Math.round(uscite[1]/lanci*100);
+                document.getElementById("percentuale3").value= Math.round(uscite[2]/lanci*100);
+                document.getElementById("percentuale4").value= Math.round(uscite[3]/lanci*100);
+                document.getElementById("percentuale5").value= Math.round(uscite[4]/lanci*100);
+                document.getElementById("percentuale6").value= Math.round(uscite[5]/lanci*100);
+
+
+            }
+        </script>
+    </head>
+    <body onload="benvenuto();">
+        <input type="button" value="Lancia il dado" onclick="lanciodado();"/> <br> <br>
+        <fieldset>
+            Numero di uscita 1 <input type="number" id="uscita1" />
+            <input type="number" id="percentuale1"/><br><br>
+            Numero di uscita 2 <input type="number" id="uscita2" />
+            <input type="number" id="percentuale2"/><br><br>
+            Numero di uscita 3 <input type="number" id="uscita3" />
+            <input type="number" id="percentuale3"/><br><br>
+            Numero di uscita 4 <input type="number" id="uscita4" />
+            <input type="number" id="percentuale4"/><br><br>
+            Numero di uscita 5 <input type="number" id="uscita5" />
+            <input type="number" id="percentuale5"/><br><br>
+            Numero di uscita 6 <input type="number" id="uscita6" />
+            <input type="number" id="percentuale6"/><br><br>
+        </fieldset>
+    </body>
+</html>

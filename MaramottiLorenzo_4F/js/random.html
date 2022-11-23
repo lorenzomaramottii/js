@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            function lancio(){
+                const numMax = 6
+                var estrazione
+                estrazione = Math.trunc(numMax*Math.random()) + 1   
+                document.getElementById("numero_estratto").value = estrazione
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Lancia il dado" onclick="lancio();"> <br> <br>
+        <input type="number" id="numero_estratto" placeholder="Numero uscito dal dado..."/>
+        <img 
+
+    </body>
+</html>
