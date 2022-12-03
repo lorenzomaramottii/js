@@ -1,0 +1,114 @@
+
+
+<html>
+    <head>
+        <title>GIOCO DEL CLICK</title>
+        <script>
+
+            let c = 0
+            let record = 0
+            let tempo = 5
+            let primo = 0
+            let secondo = 0
+            let terzo = 0
+            let mytimer
+            let time
+            let nomeRecord
+            let cognomeRecord
+
+            const clicca = () => {
+                c++
+            }
+            
+            const checkRecord = (x) =>{
+                if(x>record){
+                    record = x
+                    interrompi
+                    nomeRecord = prompt("Inserire il nome di chi ha fatto il record")
+                    cognomeRecord = prompt("Inserire il cognome di chi ha fatto il record")
+                    alert("COMPLIMENTI " + nomeRecord + " " + cognomeRecord + " HAI FATTO IL RECORD")
+                    alert("ORA TORNA A GIOCARE")
+                    document.getElementById("record").innerHTML = "RECORD: <br/> " + record
+                    document.getElementById("record").innerHTML += " " + nomeRecord
+                    document.getElementById("record").innerHTML += " " + cognomeRecord
+                }  
+            }
+
+            const podio = (x) => {
+                if (x>primo){
+                    terzo = secondo
+                    secondo = primo 
+                    primo = x
+                }
+                else if(x>secondo){
+                    terzo = secondo
+                    secondo = x
+                }
+                else if(x>terzo){
+                    terzo = x
+                }
+                document.getElementById("risultatiOrdinati").innerHTML = "PODIO <br/>" + primo +" " + nomeRecord + " " + cognomeRecord
+                document.getElementById("risultatiOrdinati").innerHTML += "<br/>" + secondo
+                document.getElementById("risultatiOrdinati").innerHTML += "<br/>" + terzo
+            }
+
+            const pulisci = () => {
+                checkRecord(c)
+                podio(c)
+                c = 0
+            }
+
+            const timer = () => {
+                tempo--
+                if (tempo==0){
+                    tempo = 5
+                }
+                document.getElementById("secondi").innerHTML = "Secondi mancanti: " + tempo
+            }
+
+            const inizia = () => {
+                mytimer = setInterval(pulisci, 5000)
+                time = setInterval(timer, 1000)
+                c = 0
+            }
+
+            const interrompi = () => {
+                setTimeout(() => {
+                    clearInterval(mytimer)
+                    clearInterval(time)
+                    alert("gioco interrotto")
+                },0)
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>GIOCO DEL CLICK</h1>
+
+        <button
+            onclick = "clicca();">
+            CLICCA
+        </button>
+        <button
+            onclick="inizia();">
+            INIZIA/RIPRENDI
+        </button> 
+        <button
+            onclick = "interrompi();">
+            INTERROMPI GIOCO
+        </button>
+        <br><br>
+        <p
+            id="secondi">
+            Secondi mancanti: 5
+        </p>
+        <p
+            id = "record">
+            RECORD: 
+        </p>
+        <ol
+            id = "risultatiOrdinati">
+            PODIO
+        </ol> 
+    </body>
+</html>
