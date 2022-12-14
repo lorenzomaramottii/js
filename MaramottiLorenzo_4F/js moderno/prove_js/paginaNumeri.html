@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            
+            let c = 0
+            const aggiungi = () => {
+                
+                let valore = document.getElementById("numero").value
+
+                const item = `
+                <li> 
+                    <button onclick = "diminusci(span_${c})"> - </button>
+                    <span id = span_${c}> ${valore} </span> 
+                    <button onclick = "incrementa(span_${c})"> + </button>
+                    
+                </li>
+                `
+
+                document.getElementById("lista").innerHTML += item
+
+                c++
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="number" id = "numero">
+        <button
+        onclick="aggiungi();">
+            AGGIUNGI
+        </button>
+        <ul id = "lista">
+
+        </ul>
+    </body>
+</html>
