@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <script>
+            
+            let c = 0
+            let arr = []
+
+            const diminuisci = (spanId) => {
+                document.getElementById(`span_${spanId}`).innerHTML = --arr[spanId]
+            }
+
+            const incrementa = (spanId) => {
+                //sono scemo ma funziona perciò godo
+                // document.getElementById(`span_${spanId}`).innerHTML -= -1
+                document.getElementById(`span_${spanId}`).innerHTML = ++arr[spanId]
+            }
+
+            const massimo = () => {
+                let max = Math.max(...arr)
+                if (max != -Infinity){
+                    alert(max)
+                } else {
+                    alert("pippone l'asinello")
+                }
+                
+            }
+
+            const increaseAll = () => {
+                arr.forEach((element, index) => {
+                    incrementa(index)
+                })
+            }
+
+            const cerca = () => {
+                let key = +prompt("Inserire valore da cercare")
+
+                for (let i = 0; i < c; i++){
+                    if (key == arr[i]){
+                        alert("Elemento trovato in posizione " + (i + 1))
+                        return
+                    }
+                    
+                }
+                alert("valore non trovato")
+            }
+
+            const aggiungi = () => {
+                
+                
+                let valore = document.getElementById("numero").value
+
+                arr[c] = valore
+
+                const item = `
+                <li> 
+                    <button onclick = "diminuisci(${c})"> - </button>
+                    <span id = span_${c}> ${valore} </span> 
+                    <button onclick = "incrementa(${c})"> + </button>
+                    
+                </li>
+                `
+                
+                document.getElementById("lista").innerHTML += item
+
+                c++
+            
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="number" id = "numero">
+        <button
+        onclick="aggiungi();">
+            AGGIUNGI
+        </button>
+
+        <button
+            onclick="massimo();">
+            MAX
+        </button>
+            
+        <button
+        onclick="increaseAll();">
+        AUMENTA TUTTO
+        </button>
+
+        <button
+            onclick="cerca();">
+            CERCA
+        </button>
+        <ul id = "lista">
+
+        </ul>
+    </body>
+</html>
